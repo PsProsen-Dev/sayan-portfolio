@@ -316,6 +316,28 @@ a { color: var(--navy); }
   gap: 1.5rem;
 }
 
+/* ---------- GALLERY ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-card);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+
 /* ---------- EDUCATION ---------- */
 .edu { display: flex; gap: 1.5rem; align-items: flex-start; max-width: 700px; }
 .edu .card-icon { margin-bottom: 0; flex-shrink: 0; }
@@ -397,6 +419,7 @@ a.contact-card:hover .contact-arrow { transform: translateX(6px); color: var(--a
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 4rem 0; }
 }
 @media (max-width: 640px) {
